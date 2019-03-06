@@ -1,3 +1,1 @@
 # Django Instagram Clone
-
-## test
