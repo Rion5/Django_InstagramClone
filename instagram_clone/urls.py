@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from users import views as user_views
 
 # TODO: come up name for the instagram clone site.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/new', user_views.new, name='user-new'),
     path('', include('instagram.urls')),
 ]
