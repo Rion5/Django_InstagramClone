@@ -13,11 +13,16 @@ def new(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return redirect(request, 'users/new.html', {'form': form})
+    return render(request, 'users/new.html', {'form': form})
 
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
+
+
+def login(request):
+    return render(request, 'users/login.html')
+
 
 
 
