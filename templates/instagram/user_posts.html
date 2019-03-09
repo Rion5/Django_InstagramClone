@@ -1,5 +1,6 @@
 {% extends 'instagram/base.html' %}
 {% block content %}
+    <h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     {% for post in posts %}
            <article class="media content-section">
              <img class="rounded-circle article-img"src="{{ post.author.profile.image.url }}" alt="">
@@ -31,8 +32,8 @@
       {% endfor%}
 
     {% if page_obj.has_next %}
-      <a class="btn btn-success btn-sm" href="?page={{ page_obj.next_page_number }}">Next</a>
-      <a class="btn btn-success btn-sm" href="?page={{ page_obj.paginator.num_pages }}">Last</a>    
+      <a class="btn btn-success btn-sm" href="?page{{ page_obj.next_page_number }}">Next</a>
+      <a class="btn btn-success btn-sm" href="?page{{ page_obj.paginator.num_pages }}">Last</a>    
     {% endif %}
   {% endif %}
 {% endblock content %}
