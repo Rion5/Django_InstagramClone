@@ -22,7 +22,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'instagram/home.html'
     context_object_name = 'posts'
-    ordering = ['-date_posted']
+    ordering = ['-id']
     paginate_by = 4
 
 class UserPostListView(ListView):
@@ -33,7 +33,7 @@ class UserPostListView(ListView):
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
+        return Post.objects.filter(author=user).order_by('-id')
 
 
 # TODO: change name of show route name
