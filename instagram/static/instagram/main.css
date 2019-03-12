@@ -1,5 +1,5 @@
 body {
-    background: #fafafa;
+    background: #DB9B9B;
     color: #333333;
     margin-top: 5rem;
   }
@@ -13,7 +13,7 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #773E42;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -52,7 +52,7 @@ body {
   .article-img {
     height: 65px;
     width: 65px;
-    margin-right: 16px;
+    margin-right: 8px;
   }
   
   .article-metadata {
@@ -82,3 +82,5 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+  
