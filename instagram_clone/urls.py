@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from users import views as user_views
 
+
 # TODO: come up name for the instagram clone site.
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,7 @@ urlpatterns = [
     path('password-reset/done', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
     path('', include('instagram.urls')),
+    
 ]
 
 
