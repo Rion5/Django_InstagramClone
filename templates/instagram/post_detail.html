@@ -1,7 +1,7 @@
 {% extends 'instagram/base.html' %}
 {% block content %}
     <article class="media content-section">
-        <img class="rounded-circle article-img"src="{{ object.author.profile.image.url }}" alt="">
+        <img class="rounded-circle account-img"src="{{ object.author.profile.image.url }}" alt="">
         <div class="media-body">
             <div class="article-metadata">
                 <a class="mr-2" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
@@ -15,7 +15,7 @@
             </div>
             <h2><a class="article-title" href="#">{{ object.title }}</a></h2>
         <p class="article-content">{{ object.content }}</p>
-        <img class="responsive article-img"src="{{ object.image.url }}" alt="">
+        <img class="article-img"src="{{ object.image.url }}" alt="">
         </div>
     </article>
 {% endblock content %}

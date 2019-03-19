@@ -23,7 +23,7 @@ class PostListView(ListView):
     template_name = 'instagram/home.html'
     context_object_name = 'posts'
     ordering = ['-id']
-    paginate_by = 4
+    paginate_by = 8
 
 class UserPostListView(ListView):
     model = Post
