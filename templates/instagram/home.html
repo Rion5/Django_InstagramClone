@@ -2,25 +2,12 @@
 {% block content %}
 <div class="flexbox-grid">
   {% for post in posts %}
-  {% comment %} <article class="media content-section">
-    <img class="rounded-circle account-img" src="{{ post.author.profile.image.url }}" alt="">
-    <div class="media-body">
-      <div class="article-metadata">
-        <a class="mr-2" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>
-        <small class="text-muted">{{ post.date_posted|date:'F d, Y' }}</small>
-      </div>
-      <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-      <p class="article-content">{{ post.content }}</p>
-      <img class="article-img" src="{{ post.image.url }}" alt="">
-    </div>
-  </article> {% endcomment %}
   <div class="card">
     <img class="card-img-top" src="{{ post.image.url }}" alt="Card image">
     <div class="card-body">
       <h5 class="card-title">{{ post.title }}</h5>
       <a class="mr-2" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>
         <small class="text-muted">{{ post.date_posted|date:'F d, Y' }}</small>
-      {% comment %} <p class="card-text">{{ post.content }}</p> {% endcomment %}
     </div>
       <a href="{% url 'post-detail' post.id %}" class="btn btn-primary btn-sm test-css">More Detail</a>
   </div>
