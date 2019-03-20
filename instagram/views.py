@@ -10,7 +10,6 @@ from django.views.generic import (
 )
 from .models import Post
 
-
 def home(request):
     context = {
         'posts': Post.objects.all()
@@ -25,6 +24,7 @@ class PostListView(ListView):
     ordering = ['-id']
     paginate_by = 8
 
+
 class UserPostListView(ListView):
     model = Post
     template_name = 'instagram/user_posts.html'  # <app>/<model>_<viewtype>.html
@@ -36,9 +36,9 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by('-id')
 
 
-# TODO: change name of show route name
 class PostDetailView(DetailView):
     model = Post
+
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
@@ -64,6 +64,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
 
+
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     success_url = '/'
@@ -76,4 +77,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'instagram/about.html', {'title': 'About'})
-
