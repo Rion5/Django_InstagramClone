@@ -2,12 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<head>
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'instagram/favicon-96x96.png' %}">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,9 +11,9 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'instagram/main.css' %}">
   {% if title %}
-  <title>Django Blog - {{ title }}</title>
+  <title>{{ title }}</title>
   {% else %}
-  <title>Django Blog</title>
+  <title>InstaCam</title>
   {% endif %}
 </head>
 <body>
@@ -26,7 +21,8 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
       <div class="fixed-top"></div>
       <div class="container">
-        <a class="navbar-brand mr-4" href="{% url 'instagram-home' %}">Instagram Clone</a>
+        <a class="navbar-brand mr-4" href="{% url 'instagram-home' %}">InstaCam <img src="{% static 'instagram/favicon-32x32.png' %}" alt="InstaCam Logo" style = "margin: 0 -20px 0 5px"></a>
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
